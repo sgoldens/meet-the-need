@@ -1,0 +1,31 @@
+<!-- Profile Tab -->
+<div class='profile'>
+	<%= image_tag @developer.avatar_url %>
+	<p class="no-card-title"><%= @developer.first_name %> <%= @developer.last_name %></p>
+	<% if current_customer %>
+		 <span id="message-link">message me</span>
+		 <%= render "conversations/message_form" %>
+	<% end %>
+	<p class="profile-tagline"><%= @developer.tagline %></p>
+	<p class="profile-bio"><%= @developer.bio %></p>
+
+	<!-- do we want to do this in addition to the native messaging? -->
+	<!-- <a href="mailto:<%@developer.email%>"><%= @developer.email %></a> -->
+	<% if @developer.technologies.any? %>
+		<div class="tags">
+				<% @developer.technologies.each do |technology| %>
+					<figure class='tech tag'><%= technology.name %></figure>
+				<% end %>
+		</div>
+	<% end %>
+	<% if @developer.topics.any? %>
+		<div class="tags">
+				<% @developer.topics.each do |topic| %>
+						<figure class='topic tag'><%= topic.name %></figure>
+				<% end %>
+		</div>
+	<% end %>
+</div>
+<% if @developer == current_developer %>
+	<%= button_to'Edit profile', edit_developer_path(@developer), method: :get, class: "button-shape green-button" %>
+<% end %>

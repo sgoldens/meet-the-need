@@ -1,0 +1,79 @@
+// Place all the styles related to the Homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$orange: #F85E28;
+$purple: #5E35B1;
+
+main {
+  padding-bottom: 3em;
+  vertical-align: top;
+  clear: both;
+  display: block;
+}
+
+.logo {
+  width: 2.2em;
+  height: 1em;
+}
+
+.search {
+  display: inline-block;
+  float: right;
+  margin-top: -1em;
+  margin-right: -1em;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+#search {
+  font-size: 2em;
+  padding-left: .5em;
+  line-height: 1.57em;
+}
+
+input[type=image] {
+  height: 1.57em;
+  top: 1em;
+  right: 4em;
+  position: relative;
+}
+
+input[type=submit] {
+  font-size: 1.5em;
+  height: 2.2em;
+}
+
+input {
+  vertical-align: top;
+}
+
+button {
+  float: right;
+  clear: both;
+  display: inline-block;
+}
+
+.cards {
+  margin-bottom: 2em;
+  display: block;
+  width: 100%;
+}
+
+.group-image {
+  margin: auto;
+  height: 50em;
+  width: 110%;
+  background:
+    linear-gradient(
+      white,
+      rgba(0, 0, 0, -0.5)
+    ),
+  url("group-pic.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  margin-left: -50px;
+  margin-top: -200px;
+  background-position: 0 -10px;
+}

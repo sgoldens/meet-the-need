@@ -1,0 +1,18 @@
+<% find_msg_customers.each_with_index do |customer, index| %>
+  <% p find_msg_customers %>
+  <% @conversations_with_one_customer = Conversation.where(developer_id: current_developer.id, customer_id: customer.id) %>
+  <h3 class='select-conversation col-md-6' id="<%= index %>"><%= customer.first_name %></h3>
+  <div class="message-content col-md-6"  id="<%= index %>">
+    <%= render partial: "conversation_thread", locals: { conversations_with_one_customer: @conversations_with_one_customer, index: index } %>
+    <div class="message-form">
+      <%= form_for @conversation, method: "create" do |f| %>
+        <%= f.text_area :body %>
+        <%= f.hidden_field :developer_id, value: current_developer.id %>
+        <%= f.hidden_field :initiated_by, value: "Customer" %>
+        <%= f.hidden_field :customer_id, value: customer.id %>
+        <%= f.submit "Create message", class: "green-button button-shape" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+

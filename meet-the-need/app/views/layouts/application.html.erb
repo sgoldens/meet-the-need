@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meet The Need</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Muli:400,300|Nunito:400,700,300' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag "https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div id="page-title">
+     <%= link_to root_path do %>
+      <%= image_tag "meet-the-need-logo.gif", class: "logo" %>
+    <% end %>
+  </div>
+  <nav id="account">
+    <% if developer_signed_in? %>
+      <li><%= link_to "Dashboard", developer_path(current_developer.id) %> | </li>
+      <li><%= link_to "Inbox", "#{developer_path(current_developer.id)}#conversations", class: "inbox", :data => { :reload => true } %> | </li>
+      <li><%= link_to 'Edit Account', edit_developer_registration_path, :class => 'navbar-link' %> |</li>
+      <li><%= link_to "Logout", destroy_developer_session_path, method: :delete, :class => 'navbar-link'  %> |</li>
+      <li>Logged in as <strong><%= current_developer.email %></strong>.</li>
+    <% elsif customer_signed_in? %>
+      <li><%= link_to "Dashboard", customer_path(current_customer.id) %> |</li>
+      <li><%= link_to "Inbox", "#{customer_path(current_customer.id)}#conversations" %> |</li>
+      <li><%= link_to 'Edit Account', edit_customer_registration_path, :class => 'navbar-link' %> |</li>
+      <li><%= link_to "Logout", destroy_customer_session_path, method: :delete, :class => 'navbar-link'  %> |</li>
+      <li>Logged in as <strong><%= current_customer.email %></strong>.</li>
+    <% else %>
+      <%= link_to "Customer signup", new_customer_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Customer Login", new_customer_session_path, :class => 'navbar-link', class: "inbox", :data => { :reload => true }  %> |
+      <%= link_to "Developer signup", new_developer_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Developer login", new_developer_session_path, :class => 'navbar-link'  %>
+    <% end %>
+  </nav>
+  <!-- <p class="notice"><%#= notice %></p> -->
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+</body>
+</html>

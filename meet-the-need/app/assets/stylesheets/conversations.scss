@@ -1,0 +1,46 @@
+// Place all the styles related to the conversations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$purple: #5E35B1;
+
+.msg-image {
+  clear: both;
+  width: 5%;
+  display: inline-block;
+  float: left;
+  margin-right: 1.2em;
+}
+
+.message-thread {
+  display: inline;
+  float: right;
+}
+
+.message-history {
+  display: inline;
+}
+
+.new-conversation {
+  display: none;
+}
+
+.message-content {
+  display: none;
+}
+
+.active {
+	display: initial;
+}
+
+.active-selector {
+  color: $purple;
+}
+
+.select-conversation {
+  float: left;
+}
+
+.block {
+  display: block;
+}

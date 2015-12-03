@@ -1,0 +1,299 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$red: #E1321d;
+$orange: #F85E28;
+$teal: #7DD1B9;
+$green: #3E6C61;
+$purple: #5E35B1;
+
+html {
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  padding: 2%;
+}
+
+.checkboxes {
+  list-style: none;
+}
+
+.logo {
+  width: 3em;
+  height: 1.5em;
+}
+
+#messaging {
+  padding: 2em;
+  width: 50%;
+  height: auto;
+  margin: 13em auto;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+#messaging p {
+  color: white;
+  font-size: 2.5em;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+#page-title {
+  font-size: 60px;
+  display: inline-block;
+}
+
+.create-project {
+  position: relative;
+  bottom: 22px;
+}
+
+#advanced {
+  position: relative;
+  top: 2em;
+}
+
+.latest {
+  top: 2em;
+}
+
+a:visited,
+a:focus,
+a:hover {
+  background-color: inherit !important;
+  color: #333;
+  text-decoration: none;
+}
+
+#account {
+  right: 5em;
+  display: inline-block;
+  float: right;
+  font-size: 1.2em;
+}
+
+#account a:hover {
+  color: $purple;
+}
+
+.notice,
+.alert {
+  display: inline;
+}
+
+nav {
+  text-align: right;
+}
+
+nav li {
+  display: inline-block;
+  list-style: none;
+}
+
+nav li:last-child {
+  display: block;
+}
+
+.tag {
+  display: inline-block;
+  color: white;
+  padding: .1em .6em;
+}
+
+.plus-minus {
+  width: 1.7em;
+  margin: 0 0 0 0;
+}
+
+.topic {
+  background-color: $teal;
+}
+
+.tech {
+  background-color: $orange;
+}
+
+.tags {
+  height: 2em;
+}
+
+#unassigned .card {
+  width: 100%;
+}
+
+.card {
+  height: 25em;
+  width: 45%;
+  border: 1px solid black;
+  margin: 1em;
+  padding: .5em;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: .8em;
+  position: relative;
+}
+
+.profile-name {
+  font-size: 2.5em;
+  font-weight: bold;
+  padding-bottom: 1.5em;
+}
+
+.profile-tagline {
+  font-size: 1.5;
+  font-style: italic;
+}
+
+img {
+  width: 23%;
+  display: inline-block;
+  float: left;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  image-rendering: crisp-edges;
+}
+
+.no-card-title {
+  font-size: 2.5em;
+  line-height: 1.2em;
+  width: 72%;
+  display: inline;
+  margin-bottom: .7em;
+}
+
+.card-image-title {
+  font-size: 2.5em;
+  line-height: 1.2em;
+  width: 72%;
+  float: left;
+  display: inline;
+  margin-bottom: .7em;
+}
+
+.card-no-image-title {
+  width: 100%;
+  float: none;
+  font-size: 2.5em;
+  display: inline;
+  margin-bottom: 10em;
+}
+
+.interior {
+  padding: 2em;
+}
+
+.text {
+  padding-right: 1em;
+  margin-top: .3em;
+  width: 80%;
+}
+
+.see-all a {
+  color: white;
+}
+
+.green-button {
+  background-color: $green;
+  color: #ffffff;
+  border: none;
+  text-align: center;
+  width: 12em;
+  height: 3em;
+  line-height: 3em;
+  margin: 2em auto;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.red-button {
+  background-color: $red;
+  display: inline-block;
+}
+input[type=submit] {
+  font-size: 1.2em;
+  height: 3em;
+}
+
+.button-shape {
+  color: #ffffff;
+  border: none;
+  text-align: center;
+  width: 12em;
+  height: 3em;
+  line-height: 3em;
+  margin: 2em auto;
+  font-size: 1.2em;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.see-all {
+  width: 30%;
+}
+
+.get-developers {
+  height: 3.1em;
+  position: absolute;
+  bottom: -1em;
+}
+
+#tabs {
+  position: absolute;
+  width: 95%;
+}
+
+.welcome {
+  top: -28px;
+  position: relative;
+}
+
+.ui-widget-header {
+  background: white;
+  border: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  top: -40px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #D0D0D0;
+}
+
+.name {
+  color: $purple;
+  text-decoration: underline;
+}
+
+.body {
+  font-size: 1.3em;
+}
+
+.date {
+  font-style: italic;
+  font-size: 1em;
+}
+
+.ui-widget-header .ui-state-hover {
+  background: #FFFFFF;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  background: #FFFFFF;
+}
+
+

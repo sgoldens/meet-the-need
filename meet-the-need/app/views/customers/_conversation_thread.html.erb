@@ -1,0 +1,18 @@
+<!-- conv with a particular dev -->
+<% conversations_with_one_developer.each do |conversation| %>
+  <div class="conversation">
+    <% if conversation.initiated_by == "Customer" %>
+      <%= image_tag conversation.customer.avatar_url, class: "msg-image" %>
+      <h5><%= conversation.customer.first_name %> <%= conversation.customer.last_name %></h5>
+      <p><%= conversation.body %></p>
+      <p class="date"><%= conversation.created_at.strftime("%m/%d/%Y at %l:%M %p") %></p>
+    <% else %>
+    <%= image_tag conversation.developer.avatar_url, class: "msg-image" %>
+      <h5><%= conversation.developer.first_name %> <%= conversation.developer.last_name %></h5>
+      <p><%= conversation.body %></p>
+      <p class="date"><%= conversation.created_at.strftime("%m/%d/%Y at %l:%M %p") %></p>
+    <% end %>
+  </div>
+<% end %>
+
+

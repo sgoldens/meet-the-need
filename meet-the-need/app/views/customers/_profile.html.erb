@@ -1,0 +1,15 @@
+<!-- Profile Tab -->
+<div class='profile'>
+  <%= image_tag @customer.avatar_url %>
+</div>
+<p class="no-card-title"><%= @customer.first_name %> <%= @customer.last_name %></p>
+<% if current_developer %>
+ <span id="message-link">message me</span>
+ <%= render "conversations/message_form" %>
+<% end %>
+<p class="profile-bio"><%= @customer.bio %></p>
+<% if @customer == current_customer %>
+  <%= button_to 'Edit profile', edit_customer_path(@customer), method: :get, class: "button-shape green-button" %>
+<% end %>
+
+

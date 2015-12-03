@@ -1,0 +1,61 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <% end %>
+
+<%= form_for @project, url: {action: "create"} do |f| %>
+  <div class='form-field'>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class='form-field'>
+    <%= f.label :description %></div>
+    <div class='form-field'><%= f.text_area :body %>
+  </div>
+  <div class='form-field'>
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+
+  <label for="technology_names">Technologies:</label>
+  <ul>
+    <% @technologies.each do |technology| %>
+      <li class='checkboxes'>
+        <input type="checkbox" name="project[technology_ids][]" value="<%= technology.id %>"> <%= technology.name %>
+      </li>
+    <% end %>
+  </ul>
+
+  <label for="topic_names">Topics:</label>
+  <ul>
+    <% @topics.each do |topic| %>
+      <li class='checkboxes'>
+        <input type="checkbox" name="project[topic_ids][]" value="<%= topic.id %>"> <%= topic.name %>
+      </li>
+    <% end %>
+  </ul>
+
+<!--     <div>
+      <%# @topics.each do |topic| %>
+        <p><figure class='topic tag'><%#= topic.name %></figure>
+        <%#= link_to project_topics_path(:project_id => @project.id, :topic_id => topic.id), method: :post do %>
+        <%# end %>
+        </p>
+      <%# end %>
+    </div> -->
+
+
+  <div class="actions">
+    <%= f.submit "Submit", class: "green-button" %>
+  </div>
+<% end %>
+
